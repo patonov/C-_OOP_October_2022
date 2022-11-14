@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleImplementation", "MultipleImplementation\MultipleImplementation.csproj", "{9721546A-7E79-44FC-A1F6-4A90AA96D9EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9721546A-7E79-44FC-A1F6-4A90AA96D9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9721546A-7E79-44FC-A1F6-4A90AA96D9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9721546A-7E79-44FC-A1F6-4A90AA96D9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9721546A-7E79-44FC-A1F6-4A90AA96D9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE9D1757-5183-4F4F-AB9D-D7304AB603E1}
+	EndGlobalSection
+EndGlobal
