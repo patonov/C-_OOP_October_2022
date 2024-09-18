@@ -1,4 +1,5 @@
-﻿using DependencyInversionDemo.Drawers.Contracts;
+﻿using DependencyInversionDemo.Common;
+using DependencyInversionDemo.Drawers.Contracts;
 using DependencyInversionDemo.Shapes;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,12 @@ namespace DependencyInversionDemo
     {
         private IShapeDrawer _drawer;
         private List<Shape> shapes;
+        private ILogger _logger;
 
-        public Engine(IShapeDrawer drawer) 
+        public Engine(IShapeDrawer drawer, ILogger logger) 
         { 
             _drawer = drawer;
+            _logger = logger;
             this.shapes = new List<Shape>();
             this.shapes.Add(new Circle());
             this.shapes.Add(new Rectangle());
@@ -25,6 +28,8 @@ namespace DependencyInversionDemo
         {
             foreach (Shape shape in this.shapes) 
             {
+                _logger.Log($"I am drawing {shape}");
+
                 if (shape is Rectangle)
                 {
                     _drawer.DrawRectangle(shape as Rectangle);

@@ -1,4 +1,5 @@
-﻿using DependencyInversionDemo.Drawers;
+﻿using DependencyInversionDemo.DI;
+using DependencyInversionDemo.Drawers;
 using DependencyInversionDemo.Drawers.Contracts;
 
 namespace DependencyInversionDemo
@@ -7,9 +8,9 @@ namespace DependencyInversionDemo
     {
         static void Main(string[] args)
         {
-            IShapeDrawer drawer = new AdvancedShapeDrawer();
+            IServiceProvider diProvider = DependencyInjectionService.ConfigureService();
 
-            Engine engine = new Engine(drawer);
+            Engine engine = (Engine)diProvider.GetService(typeof(Engine));
 
             engine.Run();
         }
