@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace RandomDemo
 {
-    public class DateCounter
+    public struct DateCounter
     {
+        public DateCounter() 
+        { 
+        
+        }
 
         public string Name { get; set; } = null!;
 

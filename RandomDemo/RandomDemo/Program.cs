@@ -1,10 +1,11 @@
 ﻿using Fractions;
 using System.Globalization;
+using System.Numerics;
 using System.Text;
 
 namespace RandomDemo
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -73,7 +74,7 @@ namespace RandomDemo
             //DateCounter counter = new DateCounter();
             //counter.Name = "Pesho countera";
 
-            //counter.CalculateDifference(input1, input2);
+            ////counter.CalculateDifference(input1, input2);
 
             //DateCounter counterNew = counter;
             //counterNew.Name = "Bai Mitko countera";
@@ -81,22 +82,32 @@ namespace RandomDemo
             //Console.WriteLine(counter.Name);
             //Console.WriteLine(counterNew.Name);
 
-            string[] inputArr = Console.ReadLine().Split(" ").ToArray();
-            string sign = inputArr[1];
-            int[] intsFirst = inputArr[0].Split("/").Select(int.Parse).ToArray();
-            int[] intsSecond = inputArr[2].Split("/").Select(int.Parse).ToArray();
+            //string[] inputArr = Console.ReadLine().Split(" ").ToArray();
+            //string sign = inputArr[1];
+            //int[] intsFirst = inputArr[0].Split("/").Select(int.Parse).ToArray();
+            //int[] intsSecond = inputArr[2].Split("/").Select(int.Parse).ToArray();
 
-            Fraction fractionOne = new Fraction(intsFirst[0], intsFirst[1]);
-            Fraction fractionTwo = new Fraction(intsSecond[0], intsSecond[1]);
+            //Fraction fractionOne = new Fraction(intsFirst[0], intsFirst[1]);
+            //Fraction fractionTwo = new Fraction(intsSecond[0], intsSecond[1]);
 
-            if (sign == "+")
-            {
-                Console.WriteLine($"{fractionOne} {sign} {fractionTwo} = {fractionOne + fractionTwo}");
-            }
-            else 
-            {
-                Console.WriteLine($"{fractionOne} {sign} {fractionTwo} = {fractionOne - fractionTwo}");
-            }
+            //if (sign == "+")
+            //{
+            //    Console.WriteLine($"{fractionOne} {sign} {fractionTwo} = {fractionOne + fractionTwo}");
+            //}
+            //else 
+            //{
+            //    Console.WriteLine($"{fractionOne} {sign} {fractionTwo} = {fractionOne - fractionTwo}");
+            //}
+
+
+            Person person = new Person();
+            person.Age = 21;
+            person.Weight = 80;
+
+            Console.WriteLine(person.Name = "Muncho" + " " 
+                + person.Age + " " + person.Weight + " " 
+                + person.Proportion );
+
 
         }
     }
