@@ -100,13 +100,16 @@ namespace RandomDemo
             //}
 
 
-            Person person = new Person();
-            person.Age = 21;
-            person.Weight = 80;
+            PersonWithCopyConstructor personWithCopyCtor = new PersonWithCopyConstructor("Pesho", 22, 80.01);
+            PersonWithCopyConstructor secondPersonWithCopyCtor = new PersonWithCopyConstructor(personWithCopyCtor);
 
-            Console.WriteLine(person.Name = "Muncho" + " " 
-                + person.Age + " " + person.Weight + " " 
-                + person.Proportion );
+            secondPersonWithCopyCtor.Name = "Muncho";
+            secondPersonWithCopyCtor.Age = 34;
+            secondPersonWithCopyCtor.Weight = 70.50;
+
+
+            Console.WriteLine(personWithCopyCtor.Name + " " + personWithCopyCtor.Age + " " + personWithCopyCtor.Weight);
+            Console.WriteLine(secondPersonWithCopyCtor.Name + " " + secondPersonWithCopyCtor.Age + " " + secondPersonWithCopyCtor.Weight);
 
 
         }
