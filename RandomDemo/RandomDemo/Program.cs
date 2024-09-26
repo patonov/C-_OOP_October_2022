@@ -71,16 +71,16 @@ namespace RandomDemo
             //var input1 = Console.ReadLine();
             //var input2 = Console.ReadLine();
 
-            //DateCounter counter = new DateCounter();
-            //counter.Name = "Pesho countera";
+            DateCounter counter = new DateCounter();
+            counter.Name = "Pesho countera";
 
-            ////counter.CalculateDifference(input1, input2);
+            //counter.CalculateDifference(input1, input2);
 
-            //DateCounter counterNew = counter;
-            //counterNew.Name = "Bai Mitko countera";
+            DateCounter counterNew = counter;
+            counterNew.Name = "Bai Mitko countera";
 
-            //Console.WriteLine(counter.Name);
-            //Console.WriteLine(counterNew.Name);
+            Console.WriteLine(counter.Name);
+            Console.WriteLine(counterNew.Name);
 
             //string[] inputArr = Console.ReadLine().Split(" ").ToArray();
             //string sign = inputArr[1];
@@ -100,16 +100,28 @@ namespace RandomDemo
             //}
 
 
-            PersonWithCopyConstructor personWithCopyCtor = new PersonWithCopyConstructor("Pesho", 22, 80.01);
-            PersonWithCopyConstructor secondPersonWithCopyCtor = new PersonWithCopyConstructor(personWithCopyCtor);
+            //PersonWithCopyConstructor personWithCopyCtor = new PersonWithCopyConstructor("Pesho", 22, 80.01);
+            //PersonWithCopyConstructor secondPersonWithCopyCtor = new PersonWithCopyConstructor(personWithCopyCtor);
 
-            secondPersonWithCopyCtor.Name = "Muncho";
-            secondPersonWithCopyCtor.Age = 34;
-            secondPersonWithCopyCtor.Weight = 70.50;
+            //secondPersonWithCopyCtor.Name = "Muncho";
+            //secondPersonWithCopyCtor.Age = 34;
+            //secondPersonWithCopyCtor.Weight = 70.50;
 
 
-            Console.WriteLine(personWithCopyCtor.Name + " " + personWithCopyCtor.Age + " " + personWithCopyCtor.Weight);
-            Console.WriteLine(secondPersonWithCopyCtor.Name + " " + secondPersonWithCopyCtor.Age + " " + secondPersonWithCopyCtor.Weight);
+            //Console.WriteLine(personWithCopyCtor.Name + " " + personWithCopyCtor.Age + " " + personWithCopyCtor.Weight);
+            //Console.WriteLine(secondPersonWithCopyCtor.Name + " " + secondPersonWithCopyCtor.Age + " " + secondPersonWithCopyCtor.Weight);
+
+            //int width = int.Parse(Console.ReadLine());
+            //int height = int.Parse(Console.ReadLine());
+            //string color = Console.ReadLine();
+
+            //Rectangle rectangle = new Rectangle();
+            //rectangle.Width = width; 
+            //rectangle.Height = height;
+            //rectangle.Color = color;
+
+            //Console.WriteLine($"Rect({rectangle.Width}, {rectangle.Height}, {rectangle.Color}) has area {(rectangle.Width * rectangle.Height)}.");
+
 
 
         }
