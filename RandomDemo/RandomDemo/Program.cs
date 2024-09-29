@@ -71,16 +71,16 @@ namespace RandomDemo
             //var input1 = Console.ReadLine();
             //var input2 = Console.ReadLine();
 
-            DateCounter counter = new DateCounter();
-            counter.Name = "Pesho countera";
+            //DateCounter counter = new DateCounter();
+            //counter.Name = "Pesho countera";
 
-            //counter.CalculateDifference(input1, input2);
+            ////counter.CalculateDifference(input1, input2);
 
-            DateCounter counterNew = counter;
-            counterNew.Name = "Bai Mitko countera";
+            //DateCounter counterNew = counter;
+            //counterNew.Name = "Bai Mitko countera";
 
-            Console.WriteLine(counter.Name);
-            Console.WriteLine(counterNew.Name);
+            //Console.WriteLine(counter.Name);
+            //Console.WriteLine(counterNew.Name);
 
             //string[] inputArr = Console.ReadLine().Split(" ").ToArray();
             //string sign = inputArr[1];
@@ -123,7 +123,16 @@ namespace RandomDemo
             //Console.WriteLine($"Rect({rectangle.Width}, {rectangle.Height}, {rectangle.Color}) has area {(rectangle.Width * rectangle.Height)}.");
 
 
+            Person person = new Person(88.01);
+            person.Name = "Muncho";
+            person.Age = 44;
+            Console.WriteLine($"{person.Name} {person.Age} {person.Weight} {(person.Proportion):f2}");
 
+            //PersonWithStaticCtor personWithStatic = new PersonWithStaticCtor();
+            //personWithStatic.Name = "Tralalayko";
+            //personWithStatic.Age = 101;
+            //personWithStatic.Weight = 88.20;
+            //Console.WriteLine(string.Join(" ", personWithStatic.Name, personWithStatic.Age, personWithStatic.Weight));
         }
     }
 }
