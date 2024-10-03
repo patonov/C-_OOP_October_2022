@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Numerics;
 using System.Text;
+using System.Linq;
 
 namespace RandomDemo
 {
@@ -123,16 +124,95 @@ namespace RandomDemo
             //Console.WriteLine($"Rect({rectangle.Width}, {rectangle.Height}, {rectangle.Color}) has area {(rectangle.Width * rectangle.Height)}.");
 
 
-            Person person = new Person(88.01);
-            person.Name = "Muncho";
-            person.Age = 44;
-            Console.WriteLine($"{person.Name} {person.Age} {person.Weight} {(person.Proportion):f2}");
+            //Person person = new Person(88.01);
+            //person.Name = "Muncho";
+            //person.Age = 44;
+            //Console.WriteLine($"{person.Name} {person.Age} {person.Weight} {(person.Proportion):f2}");
 
             //PersonWithStaticCtor personWithStatic = new PersonWithStaticCtor();
             //personWithStatic.Name = "Tralalayko";
             //personWithStatic.Age = 101;
             //personWithStatic.Weight = 88.20;
             //Console.WriteLine(string.Join(" ", personWithStatic.Name, personWithStatic.Age, personWithStatic.Weight));
+
+
+            List<Card> cards = new List<Card>();
+
+            //Card firstCard = new Card() { Face = "A", Suit = "Spades" };
+            //Card secondCard = new Card() { Face = "J", Suit = "Diamonds" };
+            //Card thirdCard = new Card() { Face = "Q", Suit = "Clubs" };
+            //Card fourthCard = new Card() { Face = "10", Suit = "Hearts" };
+
+            //cards.Add(firstCard);
+            //cards.Add(secondCard);
+            //cards.Add(thirdCard);
+            //cards.Add(fourthCard);
+
+            //foreach (Card card in cards) 
+            //{ 
+            //    card.Print();
+            //}
+
+            //string[] faces = new string[13] { "2", "3", "4", "5", "6", "7", "8", "9", "10", "A", "J", "Q", "K" };
+            //string[] suits = new string[4] { "Spades", "Diamonds", "Clubs", "Hearts" };
+
+            //for (int i = 0; i < faces.Length; i++)
+            //{
+            //    foreach (string suit in suits)
+            //    {
+            //        cards.Add(new Card() { Face = faces[i], Suit = suit });                
+            //    }
+            //}
+
+            //Random rnd = new Random();
+
+            //for (int i = 0; i < cards.Count; i++) 
+            //{ 
+            //    int rIndex = rnd.Next(0, cards.Count);
+            //    Card oldCard = cards[i];
+            //    cards[i] = cards[rIndex];
+            //    cards[rIndex] = oldCard;
+            //}
+
+            //foreach (Card card in cards)
+            //{ 
+            //    card.Print();
+            //}
+
+            CardsDeck deck = new CardsDeck();
+
+            var input = Console.ReadLine();
+
+            while (input != "End")
+            { 
+                var cmd = input.Split(" ").ToArray();
+
+                if (cmd[0] == "Add")
+                {
+                    deck.Add(new Card() { Face = cmd[1], Suit = cmd[2] });
+                }
+                else if (cmd[0] == "Print")
+                {
+                    deck.Print();
+                }
+                else if (cmd[0] == "Get")
+                {
+                    deck.GetAllCards();
+                }
+                else if (cmd[0] == "Randomize")
+                {
+                    deck.Randomize();
+                }
+                else if (cmd[0] == "Clear")
+                {
+                    deck.Clear();
+                }
+
+                input = Console.ReadLine();
+            }
+
+            
+        
         }
     }
 }

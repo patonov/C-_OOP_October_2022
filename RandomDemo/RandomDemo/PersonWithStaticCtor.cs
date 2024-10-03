@@ -8,7 +8,7 @@ namespace RandomDemo
 {
     public class PersonWithStaticCtor : Person
     {
-        public PersonWithStaticCtor()
+        static PersonWithStaticCtor()
         {
         }
     }

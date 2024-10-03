@@ -26,7 +26,7 @@ namespace RandomDemo
             this.Weight = b;
         }
 
-        public string Name 
+        public required string Name 
         {
             get
             {
