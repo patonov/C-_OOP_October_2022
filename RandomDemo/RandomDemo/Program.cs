@@ -136,7 +136,7 @@ namespace RandomDemo
             //Console.WriteLine(string.Join(" ", personWithStatic.Name, personWithStatic.Age, personWithStatic.Weight));
 
 
-            List<Card> cards = new List<Card>();
+            //List<Card> cards = new List<Card>();
 
             //Card firstCard = new Card() { Face = "A", Suit = "Spades" };
             //Card secondCard = new Card() { Face = "J", Suit = "Diamonds" };
@@ -179,40 +179,54 @@ namespace RandomDemo
             //    card.Print();
             //}
 
-            CardsDeck deck = new CardsDeck();
+            //CardsDeck deck = new CardsDeck();
 
-            var input = Console.ReadLine();
+            //var input = Console.ReadLine();
 
-            while (input != "End")
-            { 
-                var cmd = input.Split(" ").ToArray();
+            //while (input != "End")
+            //{ 
+            //    var cmd = input.Split(" ").ToArray();
 
-                if (cmd[0] == "Add")
-                {
-                    deck.Add(new Card() { Face = cmd[1], Suit = cmd[2] });
-                }
-                else if (cmd[0] == "Print")
-                {
-                    deck.Print();
-                }
-                else if (cmd[0] == "Get")
-                {
-                    deck.GetAllCards();
-                }
-                else if (cmd[0] == "Randomize")
-                {
-                    deck.Randomize();
-                }
-                else if (cmd[0] == "Clear")
-                {
-                    deck.Clear();
-                }
+            //    if (cmd[0] == "Add")
+            //    {
+            //        deck.Add(new Card() { Face = cmd[1], Suit = cmd[2] });
+            //    }
+            //    else if (cmd[0] == "Print")
+            //    {
+            //        deck.Print();
+            //    }
+            //    else if (cmd[0] == "Get")
+            //    {
+            //        deck.GetAllCards();
+            //    }
+            //    else if (cmd[0] == "Randomize")
+            //    {
+            //        deck.Randomize();
+            //    }
+            //    else if (cmd[0] == "Clear")
+            //    {
+            //        deck.Clear();
+            //    }
 
-                input = Console.ReadLine();
-            }
+            //    input = Console.ReadLine();
+            //}
+
+            //BigInteger big = new BigInteger();
+            //big = 1;
+            //int n = int.Parse(Console.ReadLine());
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    big *= i;
+            //}
+            //Console.WriteLine(big);
+
+            //StateOfMind state = StateOfMind.Depressed;
+
+            //var excited = Enum.Parse(typeof(StateOfMind), "Excited");
+
+            //Console.WriteLine((int)excited);
 
             
-        
         }
     }
 }

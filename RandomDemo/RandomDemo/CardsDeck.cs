@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RandomDemo
 {
     public class CardsDeck
-    {
+    {        
         private List<Card> cards = new List<Card>();
 
         public void Add(Card card)
