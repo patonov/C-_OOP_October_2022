@@ -226,7 +226,13 @@ namespace RandomDemo
 
             //Console.WriteLine((int)excited);
 
-            
+            Car car = new Car();
+
+            car.Make = "Volga";
+            car.Model = "4200";
+            car.Year = 1972;
+
+            Console.WriteLine($"Make {car.Make}\nModel {car.Model} \nYear {car.Year}");
         }
     }
 }
