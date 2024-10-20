@@ -226,13 +226,52 @@ namespace RandomDemo
 
             //Console.WriteLine((int)excited);
 
-            Car car = new Car();
+            //Car car = new Car();
 
-            car.Make = "Volga";
-            car.Model = "4200";
-            car.Year = 1972;
+            //car.Make = "Volga";
+            //car.Model = "4200";
+            //car.Year = 1972;
 
-            Console.WriteLine($"Make {car.Make}\nModel {car.Model} \nYear {car.Year}");
+            //Console.WriteLine($"Make {car.Make}\nModel {car.Model} \nYear {car.Year}");
+
+            int n = int.Parse(Console.ReadLine());
+            List<Employee> employees = new List<Employee>();
+
+            for (int i = 0; i < n; i++) 
+            { 
+                var inputArr = Console.ReadLine().Split(" ").ToArray();
+
+                if (inputArr.Length == 4)
+                {
+                    employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3]));
+                }
+                else if (inputArr.Length == 5)
+                {
+                    if (inputArr[4].Contains("@"))
+                    {
+                        employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], inputArr[4]));
+                    }
+                    else
+                    {
+                        employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], int.Parse(inputArr[4])));
+                    }
+                }
+                else if (inputArr.Length == 6)
+                {
+                    employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], inputArr[4], int.Parse(inputArr[5])));
+                }
+            }
+
+            string department = employees.GroupBy(x => x.Department)
+                .Select(g => new { Name = g.Key, AverageSalary = g.Average(e => e.Salary)})
+                .OrderByDescending(x => x.AverageSalary)
+                .First().Name;
+
+            Console.WriteLine($"Highest Average Salary: {department}");
+
+            employees.Where(e => e.Department == department).OrderByDescending(e => e.Salary).ToList().ForEach(Console.WriteLine);
+
+        
         }
     }
 }
