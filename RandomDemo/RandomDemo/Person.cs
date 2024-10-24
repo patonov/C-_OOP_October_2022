@@ -10,6 +10,7 @@ namespace RandomDemo
     {
         private string name;
         private int age;
+        private int weight;
 
         public Person() 
         { 
@@ -26,7 +27,7 @@ namespace RandomDemo
             this.Weight = b;
         }
 
-        public required string Name 
+        public string Name
         {
             get
             {
@@ -36,7 +37,7 @@ namespace RandomDemo
             {
                 this.name = value;
             }
-        }
+        } 
 
         public int Age 
         { 
@@ -51,7 +52,7 @@ namespace RandomDemo
             }
         }
 
-        public double Weight { get; set; }
+        public double Weight { get; set; } = 60.00;
 
         protected internal double Proportion { get => Age/Weight;  }
                 

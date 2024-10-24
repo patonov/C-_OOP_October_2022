@@ -237,8 +237,8 @@ namespace RandomDemo
             int n = int.Parse(Console.ReadLine());
             List<Employee> employees = new List<Employee>();
 
-            for (int i = 0; i < n; i++) 
-            { 
+            for (int i = 0; i < n; i++)
+            {
                 var inputArr = Console.ReadLine().Split(" ").ToArray();
 
                 if (inputArr.Length == 4)
@@ -262,16 +262,24 @@ namespace RandomDemo
                 }
             }
 
-            string department = employees.GroupBy(x => x.Department)
-                .Select(g => new { Name = g.Key, AverageSalary = g.Average(e => e.Salary)})
-                .OrderByDescending(x => x.AverageSalary)
-                .First().Name;
+            string department = employees.GroupBy(e => e.Department)
+                .Select(g => new { DepartmentName = g.Key, AgerageSalary = g.Average(e => e.Salary) })
+                .OrderByDescending(g => g.AgerageSalary)
+                .First()
+                .DepartmentName;
 
             Console.WriteLine($"Highest Average Salary: {department}");
 
-            employees.Where(e => e.Department == department).OrderByDescending(e => e.Salary).ToList().ForEach(Console.WriteLine);
+            employees.
+            Where(e => e.Department == department)
+            .OrderByDescending(e => e.Salary)
+            .ToList()
+            .ForEach(Console.WriteLine);
+                        
 
-        
+            Person pp = new Person(10);
+
+            Console.WriteLine(pp.Weight);
         }
     }
 }

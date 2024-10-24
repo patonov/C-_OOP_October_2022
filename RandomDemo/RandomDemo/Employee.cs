@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,16 +43,22 @@ namespace RandomDemo
             this.Age = age;
         }
 
+        [DefaultValue("Muncho")]
         public string Name { get { return name; } set { name = value; } }
 
+        [DefaultValue(1077.00)]
         public decimal Salary { get { return salary; } set { salary = value; } }
 
+        [DefaultValue("Junior expert")]
         public string Position { get { return position; } set { position = value; } }
 
+        [DefaultValue("Development")]
         public string Department { get { return department; } set { department = value; } }
 
+        [DefaultValue("hr@swu.bg")]
         public string Email { get { return email; } set { email = value; } }
 
+        [DefaultValue(18)]
         public int? Age { get { return age; } set { age = value; } }
 
         public override string ToString()
