@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Numerics;
 using System.Text;
 using System.Linq;
+using RandomDemo.RawData;
 
 namespace RandomDemo
 {
@@ -234,52 +235,111 @@ namespace RandomDemo
 
             //Console.WriteLine($"Make {car.Make}\nModel {car.Model} \nYear {car.Year}");
 
+            //int n = int.Parse(Console.ReadLine());
+            //List<Employee> employees = new List<Employee>();
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    var inputArr = Console.ReadLine().Split(" ").ToArray();
+
+            //    if (inputArr.Length == 4)
+            //    {
+            //        employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3]));
+            //    }
+            //    else if (inputArr.Length == 5)
+            //    {
+            //        if (inputArr[4].Contains("@"))
+            //        {
+            //            employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], inputArr[4]));
+            //        }
+            //        else
+            //        {
+            //            employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], int.Parse(inputArr[4])));
+            //        }
+            //    }
+            //    else if (inputArr.Length == 6)
+            //    {
+            //        employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], inputArr[4], int.Parse(inputArr[5])));
+            //    }
+            //}
+
+            //string department = employees.GroupBy(e => e.Department)
+            //    .Select(g => new { DepartmentName = g.Key, AgerageSalary = g.Average(e => e.Salary) })
+            //    .OrderByDescending(g => g.AgerageSalary)
+            //    .First()
+            //    .DepartmentName;
+
+            //Console.WriteLine($"Highest Average Salary: {department}");
+
+            //employees.
+            //Where(e => e.Department == department)
+            //.OrderByDescending(e => e.Salary)
+            //.ToList()
+            //.ForEach(Console.WriteLine);
+
+
+            //Person pp = new Person(10);
+
+            //Console.WriteLine(pp.Weight);
+
+            //int n = int.Parse(Console.ReadLine());
+            //List<CarInRacing> cars = new List<CarInRacing>(); 
+
+            //for (int i = 0; i < n; i++) 
+            //{ 
+            //    var input = Console.ReadLine().Split(" ").ToArray();
+            //    cars.Add(new CarInRacing(input[0], double.Parse(input[1]), double.Parse(input[2])));
+            //}
+
+            //string command = Console.ReadLine();
+
+            //while (command != "End") 
+            //{
+            //    var commandArr = command.Split(" ");
+
+            //    CarInRacing carInRacing = cars.First(c => c.Model == commandArr[1]);
+
+            //    if (carInRacing.Drive(int.Parse(commandArr[2])) == false)
+            //    {
+            //        Console.WriteLine("Insufficient fuel for the drive");
+            //    }
+            //    command = Console.ReadLine();
+            //}
+
+            //cars.ForEach(Console.WriteLine);
+
             int n = int.Parse(Console.ReadLine());
-            List<Employee> employees = new List<Employee>();
+            List<CargoCar> cargoCars = new List<CargoCar>();
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
-                var inputArr = Console.ReadLine().Split(" ").ToArray();
+                var tokens = Console.ReadLine().Split(" ");
 
-                if (inputArr.Length == 4)
-                {
-                    employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3]));
-                }
-                else if (inputArr.Length == 5)
-                {
-                    if (inputArr[4].Contains("@"))
-                    {
-                        employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], inputArr[4]));
-                    }
-                    else
-                    {
-                        employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], int.Parse(inputArr[4])));
-                    }
-                }
-                else if (inputArr.Length == 6)
-                {
-                    employees.Add(new Employee(inputArr[0], decimal.Parse(inputArr[1]), inputArr[2], inputArr[3], inputArr[4], int.Parse(inputArr[5])));
-                }
+                Engine engine = new Engine(int.Parse(tokens[1]), int.Parse(tokens[2]));
+
+                Cargo cargo = new Cargo(int.Parse(tokens[3]), tokens[4]);
+
+                List<Tyre> tyres = new List<Tyre>();
+                tyres.Add(new Tyre(double.Parse(tokens[5]), int.Parse(tokens[6])));
+                tyres.Add(new Tyre(double.Parse(tokens[7]), int.Parse(tokens[8])));
+                tyres.Add(new Tyre(double.Parse(tokens[9]), int.Parse(tokens[10])));
+                tyres.Add(new Tyre(double.Parse(tokens[11]), int.Parse(tokens[12])));
+
+                cargoCars.Add(new CargoCar(tokens[0], engine, cargo, tyres));
             }
+            
+            string newCommand = Console.ReadLine();
 
-            string department = employees.GroupBy(e => e.Department)
-                .Select(g => new { DepartmentName = g.Key, AgerageSalary = g.Average(e => e.Salary) })
-                .OrderByDescending(g => g.AgerageSalary)
-                .First()
-                .DepartmentName;
-
-            Console.WriteLine($"Highest Average Salary: {department}");
-
-            employees.
-            Where(e => e.Department == department)
-            .OrderByDescending(e => e.Salary)
-            .ToList()
-            .ForEach(Console.WriteLine);
-                        
-
-            Person pp = new Person(10);
-
-            Console.WriteLine(pp.Weight);
+            if (newCommand == "fragile")
+            {
+                cargoCars.Where(c => c.Cargo.CargoType == "fragile"
+                && c.Tyres.Any(t => t.Pressure < 1)).Select(c => c.Model).ToList().ForEach(Console.WriteLine);
+            }
+            else if (newCommand == "flamable")
+            {
+                cargoCars.Where(c => c.Cargo.CargoType == "flamable" && c.Engine.EnginePower > 250)
+                    .Select(c => c.Model).ToList().ForEach(Console.WriteLine);
+            }
         }
     }
 }
