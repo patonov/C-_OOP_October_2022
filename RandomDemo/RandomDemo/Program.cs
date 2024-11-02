@@ -4,6 +4,7 @@ using System.Numerics;
 using System.Text;
 using System.Linq;
 using RandomDemo.RawData;
+using System.Collections;
 
 namespace RandomDemo
 {
@@ -308,38 +309,65 @@ namespace RandomDemo
 
             //cars.ForEach(Console.WriteLine);
 
-            int n = int.Parse(Console.ReadLine());
-            List<CargoCar> cargoCars = new List<CargoCar>();
+            //int n = int.Parse(Console.ReadLine());
+            //List<CargoCar> cargoCars = new List<CargoCar>();
 
-            for (int i = 0; i < n; i++) 
+            //for (int i = 0; i < n; i++) 
+            //{
+            //    var tokens = Console.ReadLine().Split(" ");
+
+            //    Engine engine = new Engine(int.Parse(tokens[1]), int.Parse(tokens[2]));
+
+            //    Cargo cargo = new Cargo(int.Parse(tokens[3]), tokens[4]);
+
+            //    List<Tyre> tyres = new List<Tyre>();
+            //    tyres.Add(new Tyre(double.Parse(tokens[5]), int.Parse(tokens[6])));
+            //    tyres.Add(new Tyre(double.Parse(tokens[7]), int.Parse(tokens[8])));
+            //    tyres.Add(new Tyre(double.Parse(tokens[9]), int.Parse(tokens[10])));
+            //    tyres.Add(new Tyre(double.Parse(tokens[11]), int.Parse(tokens[12])));
+
+            //    cargoCars.Add(new CargoCar(tokens[0], engine, cargo, tyres));
+            //}
+
+            //string newCommand = Console.ReadLine();
+
+            //if (newCommand == "fragile")
+            //{
+            //    cargoCars.Where(c => c.Cargo.CargoType == "fragile"
+            //    && c.Tyres.Any(t => t.Pressure < 1)).Select(c => c.Model).ToList().ForEach(Console.WriteLine);
+            //}
+            //else if (newCommand == "flamable")
+            //{
+            //    cargoCars.Where(c => c.Cargo.CargoType == "flamable" && c.Engine.EnginePower > 250)
+            //        .Select(c => c.Model).ToList().ForEach(Console.WriteLine);
+            //}
+
+            CustomArrayList shopingList = new CustomArrayList();
+
+            shopingList.Add("Tomato");
+            shopingList.Add("Bread");
+            shopingList.Add("Cheese");
+            shopingList.Add("Cucumbers");
+            shopingList.Add("Chocolate");
+            shopingList.Add(7);
+            shopingList.Add("Coke");
+
+            for (int i = 0; i < shopingList.Count; i++)
             {
-                var tokens = Console.ReadLine().Split(" ");
-
-                Engine engine = new Engine(int.Parse(tokens[1]), int.Parse(tokens[2]));
-
-                Cargo cargo = new Cargo(int.Parse(tokens[3]), tokens[4]);
-
-                List<Tyre> tyres = new List<Tyre>();
-                tyres.Add(new Tyre(double.Parse(tokens[5]), int.Parse(tokens[6])));
-                tyres.Add(new Tyre(double.Parse(tokens[7]), int.Parse(tokens[8])));
-                tyres.Add(new Tyre(double.Parse(tokens[9]), int.Parse(tokens[10])));
-                tyres.Add(new Tyre(double.Parse(tokens[11]), int.Parse(tokens[12])));
-
-                cargoCars.Add(new CargoCar(tokens[0], engine, cargo, tyres));
+                Console.WriteLine(shopingList[i]);
             }
-            
-            string newCommand = Console.ReadLine();
 
-            if (newCommand == "fragile")
-            {
-                cargoCars.Where(c => c.Cargo.CargoType == "fragile"
-                && c.Tyres.Any(t => t.Pressure < 1)).Select(c => c.Model).ToList().ForEach(Console.WriteLine);
-            }
-            else if (newCommand == "flamable")
-            {
-                cargoCars.Where(c => c.Cargo.CargoType == "flamable" && c.Engine.EnginePower > 250)
-                    .Select(c => c.Model).ToList().ForEach(Console.WriteLine);
-            }
+            shopingList.Insert(1, "Lemon");
+            Console.WriteLine(shopingList.IndexOf("Chocolate"));
+            Console.WriteLine(shopingList.Contains("Coke"));
+            Console.WriteLine(shopingList[1]);
+            Console.WriteLine(shopingList.Count);
+            shopingList.Remove(3);
+            shopingList.Remove("Tomato");
+            Console.WriteLine(shopingList.Count);
+
+
+
         }
     }
 }
