@@ -31,7 +31,15 @@ namespace RandomDemo
 
         public void Add(object item)
         {
-            Insert(this.Count, item);
+            if (this.Count == arr.Length)
+            {
+                Resize();
+            }
+            arr[Count] = item;
+            Count++;
+
+
+            //Insert(this.Count, item);
         }
 
         public void Insert(int index, object item)
