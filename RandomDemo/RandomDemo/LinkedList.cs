@@ -131,7 +131,7 @@ namespace RandomDemo
                 this.Count--;
 
                 if (this.Count == 0)
-                {
+                { 
                     this.head = null;
                     this.tail = null;
                 }
@@ -169,6 +169,7 @@ namespace RandomDemo
 
             return -1;
         }
+
         public bool Contains(object item)
         {
             int index = IndexOf(item);

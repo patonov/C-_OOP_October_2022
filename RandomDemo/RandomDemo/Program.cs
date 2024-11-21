@@ -366,29 +366,40 @@ namespace RandomDemo
             //shopingList.Remove("Tomato");
             //Console.WriteLine(shopingList.Count);
 
-            LinkedList shoppingList = new LinkedList();
+            //LinkedList shoppingList = new LinkedList();
 
-            shoppingList.Add("Biscuits");
-            shoppingList.Add("Chips");
-            shoppingList.Add("Cheese");
-            shoppingList.Add("Pickles");
-            shoppingList.Add("Ice cream");
-            shoppingList.Add(7);
-            shoppingList.Add("Honey");
+            //shoppingList.Add("Biscuits");
+            //shoppingList.Add("Chips");
+            //shoppingList.Add("Cheese");
+            //shoppingList.Add("Pickles");
+            //shoppingList.Add("Ice cream");
+            //shoppingList.Add(7);
+            //shoppingList.Add("Honey");
 
-            for (int i = 0; i < shoppingList.Count; i++)
-            {
-                Console.WriteLine(shoppingList[i]);
-            }
+            //for (int i = 0; i < shoppingList.Count; i++)
+            //{
+            //    Console.WriteLine(shoppingList[i]);
+            //}
 
 
-            Console.WriteLine(shoppingList.IndexOf("Ice cream"));
-            Console.WriteLine(shoppingList.Contains("Honey"));
-            Console.WriteLine(shoppingList[1]);
-            Console.WriteLine(shoppingList.Count);
-            shoppingList.Remove(3);
-            shoppingList.Remove("Chips");
-            Console.WriteLine(shoppingList.Count);
+            //Console.WriteLine(shoppingList.IndexOf("Ice cream"));
+            //Console.WriteLine(shoppingList.Contains("Honey"));
+            //Console.WriteLine(shoppingList[1]);
+            //Console.WriteLine(shoppingList.Count);
+            //shoppingList.Remove(3);
+            //shoppingList.Remove("Chips");
+            //Console.WriteLine(shoppingList.Count);
+
+            var stack = new CustomStack();
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            Console.WriteLine(stack.Count);
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Peek());
+            stack.ForEach(x => Console.WriteLine(x));
+
+
 
 
         }
