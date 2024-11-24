@@ -41,7 +41,7 @@ namespace RandomDemo
 
         public object Pop() 
         {
-            if (this.initialArray.Length == 0)
+            if (this.Count == 0)
             {
                 throw new InvalidOperationException("The stack is empty.");
             }
@@ -53,7 +53,7 @@ namespace RandomDemo
 
         public object Peek() 
         {
-            if (this.initialArray.Length == 0)
+            if (this.Count == 0)
             {
                 throw new InvalidOperationException("The stack is empty.");
             }
