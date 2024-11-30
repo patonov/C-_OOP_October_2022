@@ -49,5 +49,14 @@ namespace TestProject
 
             Assert.Throws<InvalidOperationException>(() => stack.Peek(), "The stack is empty.");
         }
+
+        [Test]
+        public void ForEach_WorksProperly()
+        {
+            CustomStack stack = new CustomStack();
+            stack.Push(111);
+            
+            Assert.Throws<NullReferenceException>(() => stack.ForEach(null));
+        }
     }
 }
