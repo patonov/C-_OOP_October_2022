@@ -13,15 +13,15 @@ namespace RandomDemo
         private int endIndex;
         private object[] objects;
 
-        public CustomQueue(int capacity = initial_capacity) 
+        public CustomQueue() 
         { 
-            this.objects = new object[capacity];
+            this.objects = new object[initial_capacity];
         }
 
         public int Count { get; private set; }
         public int Capacity { get => this.objects.Length; }
 
-        public void Enqueue(object item) 
+        public void Enqueue(object item)
         {
             if (this.Count >= this.objects.Length)
             {
@@ -76,7 +76,6 @@ namespace RandomDemo
             }
 
             var itemToReturn = this.objects[this.startIndex];
-            startIndex = (startIndex + 1) % this.objects.Length;
             return itemToReturn;
         }
 
