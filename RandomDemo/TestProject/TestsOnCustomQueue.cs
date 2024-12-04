@@ -10,6 +10,11 @@ namespace TestProject
     [TestFixture]
     public class TestsOnCustomQueue
     {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
         [Test]
         public void Enqueue_EmptyQueue_ShouldAddElement()
         {
