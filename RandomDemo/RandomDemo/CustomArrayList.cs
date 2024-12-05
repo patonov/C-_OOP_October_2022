@@ -60,7 +60,7 @@ namespace RandomDemo
 
         public int IndexOf(object item)
         {
-            for (int i = 0; i < this.arr.Length; i++)
+            for (int i = 0; i <= this.arr.Length; i++)
             {
                 if (this.arr[i].Equals(item))
                 {

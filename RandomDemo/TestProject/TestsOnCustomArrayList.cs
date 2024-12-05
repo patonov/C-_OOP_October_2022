@@ -64,6 +64,31 @@ namespace TestProject
             Assert.That(arrayList.IndexOf("Duck"), Is.EqualTo(1));
         }
 
+        [Test]
+        public void Contains_WorksProperly() 
+        {         
+            CustomArrayList arrayList = new CustomArrayList();
+            arrayList.Add("Hero");
+            arrayList.Add("Duck");
+            arrayList.Add("Master");
+
+            Assert.IsTrue(arrayList.Contains("Hero"));
+            Assert.Throws<NullReferenceException>(() => arrayList.Contains("Cadillac"));
+        }
+
+        [Test]
+        public void Clear_WorksProperly()
+        {
+            CustomArrayList arrayList = new CustomArrayList();
+            arrayList.Add("Hero");
+            arrayList.Add("Duck");
+            arrayList.Add("Master");
+
+            arrayList.Clear();
+
+            Assert.That(arrayList.Count, Is.EqualTo(0));
+        }
+
 
     }
 }

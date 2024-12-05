@@ -342,7 +342,9 @@ namespace RandomDemo
             //        .Select(c => c.Model).ToList().ForEach(Console.WriteLine);
             //}
 
-            //CustomArrayList shopingList = new CustomArrayList();
+            CustomArrayList shopingList = new CustomArrayList();
+            shopingList.Add("owaw");
+            Console.WriteLine(shopingList.Contains("tralala"));
 
             //shopingList.Add("Tomato");
             //shopingList.Add("Bread");
@@ -399,59 +401,59 @@ namespace RandomDemo
             //Console.WriteLine(stack.Peek());
             //stack.ForEach(x => Console.WriteLine(x));
 
-            var queue = new CustomQueue();
+            //var queue = new CustomQueue();
 
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            queue.Enqueue(1);
+            //queue.Enqueue(1);
 
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Enqueue(4);
-            queue.Enqueue(5);
-            queue.Enqueue(6);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Enqueue(4);
+            //queue.Enqueue(5);
+            //queue.Enqueue(6);
 
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            var first = queue.Dequeue();
-            Console.WriteLine("First = {0}", first);
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //var first = queue.Dequeue();
+            //Console.WriteLine("First = {0}", first);
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            queue.Enqueue(-7);
-            queue.Enqueue(-8);
-            queue.Enqueue(-9);
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //queue.Enqueue(-7);
+            //queue.Enqueue(-8);
+            //queue.Enqueue(-9);
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            first = queue.Dequeue();
-            Console.WriteLine("First = {0}", first);
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //first = queue.Dequeue();
+            //Console.WriteLine("First = {0}", first);
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            queue.Enqueue(-10);
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //queue.Enqueue(-10);
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-            first = queue.Dequeue();
-            Console.WriteLine("First = {0}", first);
-            Console.WriteLine("Count = {0}", queue.Count);
-            Console.WriteLine(string.Join(", ", queue.ToArray()));
-            Console.WriteLine("---------------------------");
+            //first = queue.Dequeue();
+            //Console.WriteLine("First = {0}", first);
+            //Console.WriteLine("Count = {0}", queue.Count);
+            //Console.WriteLine(string.Join(", ", queue.ToArray()));
+            //Console.WriteLine("---------------------------");
 
-
+            
         }
     }
 }
