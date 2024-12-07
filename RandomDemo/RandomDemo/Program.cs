@@ -343,8 +343,7 @@ namespace RandomDemo
             //}
 
             CustomArrayList shopingList = new CustomArrayList();
-            shopingList.Add("owaw");
-            Console.WriteLine(shopingList.Contains("tralala"));
+            
 
             //shopingList.Add("Tomato");
             //shopingList.Add("Bread");
@@ -453,7 +452,24 @@ namespace RandomDemo
             //Console.WriteLine(string.Join(", ", queue.ToArray()));
             //Console.WriteLine("---------------------------");
 
-            
+            LinkedList linkedList = new LinkedList();
+            linkedList.Add("Bear");
+            linkedList.Add("Tiger");
+            linkedList.Add("Wolf");
+            linkedList.Add("Spider");
+
+            Console.WriteLine(linkedList.Count);
+            Console.WriteLine(linkedList[2]);
+            Console.WriteLine(linkedList.IndexOf("Wolf"));
+            Console.WriteLine(linkedList.Contains("Wolf"));
+            Console.WriteLine(linkedList.IndexOf("Wolf"));
+            Console.WriteLine(linkedList.Remove(2));
+
+            for (int i = 0; i < linkedList.Count; i++) 
+            {
+                Console.WriteLine(linkedList[i]);
+            }
+
         }
     }
 }
