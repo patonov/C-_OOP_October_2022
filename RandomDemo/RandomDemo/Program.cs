@@ -452,24 +452,53 @@ namespace RandomDemo
             //Console.WriteLine(string.Join(", ", queue.ToArray()));
             //Console.WriteLine("---------------------------");
 
-            LinkedList linkedList = new LinkedList();
-            linkedList.Add("Bear");
-            linkedList.Add("Tiger");
-            linkedList.Add("Wolf");
-            linkedList.Add("Spider");
+            //LinkedList linkedList = new LinkedList();
+            //linkedList.Add("Bear");
+            //linkedList.Add("Tiger");
+            //linkedList.Add("Wolf");
+            //linkedList.Add("Spider");
 
-            Console.WriteLine(linkedList.Count);
-            Console.WriteLine(linkedList[2]);
-            Console.WriteLine(linkedList.IndexOf("Wolf"));
-            Console.WriteLine(linkedList.Contains("Wolf"));
-            Console.WriteLine(linkedList.IndexOf("Wolf"));
-            Console.WriteLine(linkedList.Remove(2));
+            //Console.WriteLine(linkedList.Count);
+            //Console.WriteLine(linkedList[2]);
+            //Console.WriteLine(linkedList.IndexOf("Wolf"));
+            //Console.WriteLine(linkedList.Contains("Wolf"));
+            //Console.WriteLine(linkedList.IndexOf("Wolf"));
+            //Console.WriteLine(linkedList.Remove(2));
 
-            for (int i = 0; i < linkedList.Count; i++) 
-            {
-                Console.WriteLine(linkedList[i]);
-            }
+            //for (int i = 0; i < linkedList.Count; i++) 
+            //{
+            //    Console.WriteLine(linkedList[i]);
+            //}
 
+
+            CustomGenericCollection<string> stringCollection = new CustomGenericCollection<string>();
+
+            stringCollection.Add("One");
+            stringCollection.Add("Two");
+            stringCollection.Add("Three");
+
+            stringCollection.Remove();
+
+            Console.WriteLine(string.Join(" ", stringCollection.Print()));
+            Console.WriteLine(stringCollection.Count);
+
+            stringCollection.Add("Three");
+            Console.WriteLine(string.Join(" ", stringCollection.Print()));
+            Console.WriteLine(stringCollection.Count);
+
+            //CustomGenericCollection<int> intCollection = new CustomGenericCollection<int>();
+            //intCollection.Add(1);
+            //intCollection.Add(2);
+            //intCollection.Add(3);
+
+            //intCollection.Remove();
+
+            //Console.WriteLine(string.Join(" ", intCollection.Print()));
+            //Console.WriteLine(intCollection.Count);
+
+            //intCollection.Add(3);
+            //Console.WriteLine(string.Join(" ", intCollection.Print()));
+            //Console.WriteLine(intCollection.Count);
         }
     }
 }
