@@ -471,20 +471,20 @@ namespace RandomDemo
             //}
 
 
-            CustomGenericCollection<string> stringCollection = new CustomGenericCollection<string>();
+            //CustomGenericCollection<string> stringCollection = new CustomGenericCollection<string>();
 
-            stringCollection.Add("One");
-            stringCollection.Add("Two");
-            stringCollection.Add("Three");
+            //stringCollection.Add("One");
+            //stringCollection.Add("Two");
+            //stringCollection.Add("Three");
 
-            stringCollection.Remove();
+            //stringCollection.Remove();
 
-            Console.WriteLine(string.Join(" ", stringCollection.Print()));
-            Console.WriteLine(stringCollection.Count);
+            //Console.WriteLine(string.Join(" ", stringCollection.Print()));
+            //Console.WriteLine(stringCollection.Count);
 
-            stringCollection.Add("Three");
-            Console.WriteLine(string.Join(" ", stringCollection.Print()));
-            Console.WriteLine(stringCollection.Count);
+            //stringCollection.Add("Three");
+            //Console.WriteLine(string.Join(" ", stringCollection.Print()));
+            //Console.WriteLine(stringCollection.Count);
 
             //CustomGenericCollection<int> intCollection = new CustomGenericCollection<int>();
             //intCollection.Add(1);
@@ -499,6 +499,21 @@ namespace RandomDemo
             //intCollection.Add(3);
             //Console.WriteLine(string.Join(" ", intCollection.Print()));
             //Console.WriteLine(intCollection.Count);
+
+            //Box<int> box = new Box<int>();
+            //box.Add(1);
+            //box.Add(2);
+            //box.Add(3);
+            //Console.WriteLine(box.Remove());
+            //box.Add(4);
+            //box.Add(5);
+            //Console.WriteLine(box.Remove());
+                        
+            string[] strings = ArrayCreator.Create(5, "Pesho");
+            int[] integers = ArrayCreator.Create(10, 33);
+
+
+
         }
     }
 }
