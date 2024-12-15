@@ -512,6 +512,10 @@ namespace RandomDemo
             string[] strings = ArrayCreator.Create(5, "Pesho");
             int[] integers = ArrayCreator.Create(10, 33);
 
+            EqualityScale<string> equalityScale = new EqualityScale<string>("Box", "Box");
+
+            Console.WriteLine(equalityScale.AreEqual());
+
 
 
         }
