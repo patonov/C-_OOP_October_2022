@@ -18,7 +18,7 @@ namespace RandomDemo
             this.children = new List<Tree<T>>();
         }
 
-        public Tree(T value, Tree<T>[] children)
+        public Tree(T value, params Tree<T>[] children)
             : this(value)
         {
             foreach (var child in children)
