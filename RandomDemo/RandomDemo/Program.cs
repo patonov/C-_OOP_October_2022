@@ -343,7 +343,7 @@ namespace RandomDemo
             //}
 
             CustomArrayList shopingList = new CustomArrayList();
-            
+
 
             //shopingList.Add("Tomato");
             //shopingList.Add("Bread");
@@ -508,15 +508,49 @@ namespace RandomDemo
             //box.Add(4);
             //box.Add(5);
             //Console.WriteLine(box.Remove());
-                        
-            string[] strings = ArrayCreator.Create(5, "Pesho");
-            int[] integers = ArrayCreator.Create(10, 33);
 
-            EqualityScale<string> equalityScale = new EqualityScale<string>("Box", "Box");
+            //string[] strings = ArrayCreator.Create(5, "Pesho");
+            //int[] integers = ArrayCreator.Create(10, 33);
 
-            Console.WriteLine(equalityScale.AreEqual());
+            //EqualityScale<string> equalityScale = new EqualityScale<string>("Box", "Box");
 
+            //Console.WriteLine(equalityScale.AreEqual());
 
+            //int[] numbers = Console.ReadLine()!.Split(", ").Select(int.Parse).ToArray();
+
+            //BubbleSort.BubbleSorter(numbers);
+
+            //Console.WriteLine(string.Join(" ", numbers));
+
+            StoreWithGenericConstraint<Person> personeStore = new StoreWithGenericConstraint<Person>();
+            Person persone = new Person() { Name = "Pesho", Age = 18, Weight = 71.5 };
+
+            personeStore.StoredValue = persone;
+
+            Console.WriteLine($"{personeStore.StoredValue.Name} {personeStore.StoredValue.Age}");
+
+            StoreWithGenericConstraint<string> storeOfMessages = new StoreWithGenericConstraint<string>();
+            storeOfMessages.StoredValue = "Greetings from Blagoevgrad";
+
+            Console.WriteLine(storeOfMessages.StoredValue);
+
+            StoreWithGenericConstraint<Box<int>> boxStoreOfInts = new StoreWithGenericConstraint<Box<int>>();
+
+            Box<int> box = new Box<int>();
+            boxStoreOfInts.StoredValue = box;
+
+            boxStoreOfInts.StoredValue.Add(101);
+            boxStoreOfInts.StoredValue.Add(202);
+            boxStoreOfInts.StoredValue.Add(303);
+
+            Console.WriteLine(boxStoreOfInts.StoredValue.Count);
+
+            StoreWithTwoGenericConstraints<int, string> complesStore = new StoreWithTwoGenericConstraints<int, string>();
+
+            complesStore.KeyParameter = 1;
+            complesStore.ValueParameter = "Greetings";
+
+            Console.WriteLine($"{complesStore.KeyParameter} => {complesStore.ValueParameter}");
 
         }
     }
