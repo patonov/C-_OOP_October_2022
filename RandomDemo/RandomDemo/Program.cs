@@ -522,35 +522,55 @@ namespace RandomDemo
 
             //Console.WriteLine(string.Join(" ", numbers));
 
-            StoreWithGenericConstraint<Person> personeStore = new StoreWithGenericConstraint<Person>();
-            Person persone = new Person() { Name = "Pesho", Age = 18, Weight = 71.5 };
+            //StoreWithGenericConstraint<Person> personeStore = new StoreWithGenericConstraint<Person>();
+            //Person persone = new Person() { Name = "Pesho", Age = 18, Weight = 71.5 };
 
-            personeStore.StoredValue = persone;
+            //personeStore.StoredValue = persone;
 
-            Console.WriteLine($"{personeStore.StoredValue.Name} {personeStore.StoredValue.Age}");
+            //Console.WriteLine($"{personeStore.StoredValue.Name} {personeStore.StoredValue.Age}");
 
-            StoreWithGenericConstraint<string> storeOfMessages = new StoreWithGenericConstraint<string>();
-            storeOfMessages.StoredValue = "Greetings from Blagoevgrad";
+            //StoreWithGenericConstraint<string> storeOfMessages = new StoreWithGenericConstraint<string>();
+            //storeOfMessages.StoredValue = "Greetings from Blagoevgrad";
 
-            Console.WriteLine(storeOfMessages.StoredValue);
+            //Console.WriteLine(storeOfMessages.StoredValue);
 
-            StoreWithGenericConstraint<Box<int>> boxStoreOfInts = new StoreWithGenericConstraint<Box<int>>();
+            //StoreWithGenericConstraint<Box<int>> boxStoreOfInts = new StoreWithGenericConstraint<Box<int>>();
 
-            Box<int> box = new Box<int>();
-            boxStoreOfInts.StoredValue = box;
+            //Box<int> box = new Box<int>();
+            //boxStoreOfInts.StoredValue = box;
 
-            boxStoreOfInts.StoredValue.Add(101);
-            boxStoreOfInts.StoredValue.Add(202);
-            boxStoreOfInts.StoredValue.Add(303);
+            //boxStoreOfInts.StoredValue.Add(101);
+            //boxStoreOfInts.StoredValue.Add(202);
+            //boxStoreOfInts.StoredValue.Add(303);
 
-            Console.WriteLine(boxStoreOfInts.StoredValue.Count);
+            //Console.WriteLine(boxStoreOfInts.StoredValue.Count);
 
-            StoreWithTwoGenericConstraints<int, string> complesStore = new StoreWithTwoGenericConstraints<int, string>();
+            //StoreWithTwoGenericConstraints<int, string> complesStore = new StoreWithTwoGenericConstraints<int, string>();
 
-            complesStore.KeyParameter = 1;
-            complesStore.ValueParameter = "Greetings";
+            //complesStore.KeyParameter = 1;
+            //complesStore.ValueParameter = "Greetings";
 
-            Console.WriteLine($"{complesStore.KeyParameter} => {complesStore.ValueParameter}");
+            //Console.WriteLine($"{complesStore.KeyParameter} => {complesStore.ValueParameter}");
+
+            var inputOne = Console.ReadLine()!.Split().ToArray();
+            var name = $"{ inputOne[0] } { inputOne[1] }";
+            var address = inputOne[2];
+            var firstTuple = new Tuple<string, string>(name, address);
+
+            var inputTwo = Console.ReadLine()!.Split().ToArray();
+            var drinker = inputTwo[0];
+            var juice = int.Parse(inputTwo[1]); 
+            var secondTuple = new Tuple<string, int>(drinker, juice);
+
+            var inputThree = Console.ReadLine()!.Split().ToArray();
+            var integerValue = int.Parse(inputThree[0]);
+            var doubleValue = double.Parse(inputThree[1]);
+            var thirdTuple = new Tuple<int, double>(integerValue, doubleValue);
+
+            Console.WriteLine(firstTuple);
+            Console.WriteLine(secondTuple);
+            Console.WriteLine(thirdTuple);
+
 
         }
     }
