@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RandomDemo
 {
-    public class CustomQueue
+    public class CustomQueue : IEnumerable
     {
         private const int initial_capacity = 4;
         private int startIndex;
@@ -16,6 +17,11 @@ namespace RandomDemo
         public CustomQueue() 
         { 
             this.objects = new object[initial_capacity];
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return this.objects.GetEnumerator();
         }
 
         public int Count { get; private set; }
@@ -95,5 +101,6 @@ namespace RandomDemo
             }
         }
 
+        
     }
 }

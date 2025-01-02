@@ -5,6 +5,7 @@ using System.Text;
 using System.Linq;
 using RandomDemo.RawData;
 using System.Collections;
+using System.Security.AccessControl;
 
 namespace RandomDemo
 {
@@ -552,25 +553,38 @@ namespace RandomDemo
 
             //Console.WriteLine($"{complesStore.KeyParameter} => {complesStore.ValueParameter}");
 
-            var inputOne = Console.ReadLine()!.Split().ToArray();
-            var name = $"{ inputOne[0] } { inputOne[1] }";
-            var address = inputOne[2];
-            var firstTuple = new Tuple<string, string>(name, address);
+            //var inputOne = Console.ReadLine()!.Split().ToArray();
+            //var name = $"{ inputOne[0] } { inputOne[1] }";
+            //var address = inputOne[2];
+            //var firstTuple = new Tuple<string, string>(name, address);
 
-            var inputTwo = Console.ReadLine()!.Split().ToArray();
-            var drinker = inputTwo[0];
-            var juice = int.Parse(inputTwo[1]); 
-            var secondTuple = new Tuple<string, int>(drinker, juice);
+            //var inputTwo = Console.ReadLine()!.Split().ToArray();
+            //var drinker = inputTwo[0];
+            //var juice = int.Parse(inputTwo[1]); 
+            //var secondTuple = new Tuple<string, int>(drinker, juice);
 
-            var inputThree = Console.ReadLine()!.Split().ToArray();
-            var integerValue = int.Parse(inputThree[0]);
-            var doubleValue = double.Parse(inputThree[1]);
-            var thirdTuple = new Tuple<int, double>(integerValue, doubleValue);
+            //var inputThree = Console.ReadLine()!.Split().ToArray();
+            //var integerValue = int.Parse(inputThree[0]);
+            //var doubleValue = double.Parse(inputThree[1]);
+            //var thirdTuple = new Tuple<int, double>(integerValue, doubleValue);
 
-            Console.WriteLine(firstTuple);
-            Console.WriteLine(secondTuple);
-            Console.WriteLine(thirdTuple);
+            //Console.WriteLine(firstTuple);
+            //Console.WriteLine(secondTuple);
+            //Console.WriteLine(thirdTuple);
 
+
+            //CustomQueue queue = new CustomQueue();
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Enqueue(4);
+
+            IntEnumerable collection = new IntEnumerable();
+
+            foreach (var item in collection) 
+            { 
+                Console.WriteLine(item);
+            }
 
         }
     }
