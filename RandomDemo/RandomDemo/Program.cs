@@ -586,20 +586,62 @@ namespace RandomDemo
             //    Console.WriteLine(item);
             //}
 
-            Book bookOne = new Book("Animal Farm", 2003, "George Orwell");
-            Book bookTwo = new Book("The Documents in the Case", 2002,
-                "Dorothy Sayers", "Robert Eustace");
-            Book bookThree = new Book("The Documents in the Case", 1930);
+            //Book bookOne = new Book("Animal Farm", 2003, "George Orwell");
+            //Book bookTwo = new Book("The Documents in the Case", 2002,
+            //    "Dorothy Sayers", "Robert Eustace");
+            //Book bookThree = new Book("The Documents in the Case", 1930);
 
-            Library libraryEmpty = new Library();
-            Library library = new Library(bookOne, bookTwo, bookThree);
+            //Library libraryEmpty = new Library();
+            //Library library = new Library(bookOne, bookTwo, bookThree);
 
-            foreach (Book book in library) 
-            { 
-                Console.WriteLine("{0} {1} {2}", book.Title, book.Year, string.Join(", ", book.Authors));
+            //foreach (Book book in library) 
+            //{ 
+            //    Console.WriteLine("{0} {1} {2}", book.Title, book.Year, string.Join(", ", book.Authors));
+            //}
+
+            //var n = int.Parse(Console.ReadLine()!);
+
+            //List<int> listOfNums = new List<int>(); 
+
+            //for (int i = 0; i < n; i++) 
+            //{ 
+            //    listOfNums.Add(int.Parse(Console.ReadLine()!));
+            //}
+
+            //var positionsToReplace = Console.ReadLine()!.Split(" ").Select(int.Parse).ToArray();
+
+            //ReplaceValues<int>(listOfNums, positionsToReplace);
+
+            //NumPrinting(listOfNums);
+
+            RestrictedGenericClass<Employee, BaseEmployeeClass> restricted = new RestrictedGenericClass<Employee, BaseEmployeeClass>();
+
+            LessRestrictedGenericClass<Employee> lessRestricted = new LessRestrictedGenericClass<Employee>();
+
+            //LessRestrictedGenericClass<Book> lessRestrictedBook = new LessRestrictedGenericClass<Book>(); //throws compile-time error
+
+            Console.WriteLine(lessRestricted);
+
+
+
+
+        }
+
+        public static void ReplaceValues<T>(List<T> list, int[] positions)
+            where T : struct
+        {
+            var interim = list[positions[0]];
+            list[positions[0]] = list[positions[1]];
+            list[positions[1]] = interim;
+
+        }
+
+        public static void NumPrinting(List<int> list)
+        {
+            foreach (int i in list)
+            {
+                Console.WriteLine("{0}: {1}", i.GetType().FullName, i);
             }
-
-
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RandomDemo
 {
-    public class Employee
+    public class Employee : BaseEmployeeClass//, IEmployee
     {
         private string name;
         private decimal salary;
