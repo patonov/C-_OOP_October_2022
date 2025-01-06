@@ -614,15 +614,15 @@ namespace RandomDemo
 
             //NumPrinting(listOfNums);
 
-            RestrictedGenericClass<Employee, BaseEmployeeClass> restricted = new RestrictedGenericClass<Employee, BaseEmployeeClass>();
+            //RestrictedGenericClass<Employee, BaseEmployeeClass> restricted = new RestrictedGenericClass<Employee, BaseEmployeeClass>();
 
-            LessRestrictedGenericClass<Employee> lessRestricted = new LessRestrictedGenericClass<Employee>();
+            //LessRestrictedGenericClass<Employee> lessRestricted = new LessRestrictedGenericClass<Employee>();
 
-            //LessRestrictedGenericClass<Book> lessRestrictedBook = new LessRestrictedGenericClass<Book>(); //throws compile-time error
+            ////LessRestrictedGenericClass<Book> lessRestrictedBook = new LessRestrictedGenericClass<Book>(); //throws compile-time error
 
-            Console.WriteLine(lessRestricted);
+            //Console.WriteLine(lessRestricted);
 
-
+           
 
 
         }
