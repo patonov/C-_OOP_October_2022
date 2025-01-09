@@ -16,6 +16,12 @@ namespace RandomDemo
             this.books = books.ToList();
         }
 
+        public void Sort()
+        { 
+            BookComparator bookComparator = new BookComparator();
+            books.Sort(bookComparator);
+        }
+
         public IEnumerator<Book> GetEnumerator()
         {
             //return books.GetEnumerator();

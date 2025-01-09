@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RandomDemo
 {
-    public class Book
+    public class Book : IComparable<Book>
     {
         public Book(string title, int year, params string[] authors) 
         { 
@@ -20,5 +20,20 @@ namespace RandomDemo
         public string Title { get; set; } = null!;
 
         public List<string> Authors { get; set; } = new List<string>();
+
+        public int CompareTo(Book other)
+        {
+            var result = this.Year.CompareTo(other.Year);
+            if (result == 0)
+            { 
+                result = this.Title.CompareTo(other.Title);
+            }
+            return result;
+        }
+
+        public override string ToString() 
+        {
+            return $"{this.Title} - {this.Year}";
+        }
     }
 }
