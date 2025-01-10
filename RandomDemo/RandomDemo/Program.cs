@@ -622,7 +622,8 @@ namespace RandomDemo
 
             //Console.WriteLine(lessRestricted);
 
-           
+            int[] ints = { 2, 4, 6, 18, 33, 44 };
+            Console.WriteLine(RecursiveBinarySearcher.Search(ints, ints.Length, 18));
 
 
         }
