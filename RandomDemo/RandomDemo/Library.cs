@@ -25,7 +25,12 @@ namespace RandomDemo
         public IEnumerator<Book> GetEnumerator()
         {
             //return books.GetEnumerator();
-            return new LibraryIterator(books);
+            //return new LibraryIterator(books);
+
+            foreach (Book book in this.books)
+            { 
+                yield return book;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

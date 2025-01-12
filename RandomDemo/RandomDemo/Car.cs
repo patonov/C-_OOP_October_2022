@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RandomDemo
 {
-    public class Car
+    public class Car : IComparable<Car>
     {
         private string make;
         private string model;
@@ -97,6 +97,17 @@ namespace RandomDemo
             { 
                 this.fuelConsumption = value;
             }
+        }
+
+        public int CompareTo(Car other)
+        {
+            int result = this.Make.CompareTo(other.Make);
+
+            if (result == 0)
+            { 
+                result = this.Year.CompareTo(other.Year);
+            }
+            return result;
         }
 
         public void Drive(double distance)

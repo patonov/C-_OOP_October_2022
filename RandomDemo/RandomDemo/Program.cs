@@ -623,9 +623,31 @@ namespace RandomDemo
             //Console.WriteLine(lessRestricted);
 
             int[] ints = { 2, 4, 6, 18, 33, 44 };
-            Console.WriteLine(RecursiveBinarySearcher.Search(ints, ints.Length, 18));
+            //Console.WriteLine(RecursiveBinarySearcher.Search(ints, ints.Length, 18));
+
+            //Console.WriteLine(string.Join(" ", IntsEnumerableMethod(ints)));
+
+            //Book book = new Book("MegaDangers", 2021, "Nuriel Rubini");
+            //Book book2 = new Book("MegaDangers 2", 2023, "Nuriel Rubini");
+
+            //Library books = new Library(book, book2);
+
+            //foreach (Book b in books)
+            //{ 
+            //    Console.WriteLine(b.Title);
+            //}
 
 
+
+
+        }
+
+        public static IEnumerable<int> IntsEnumerableMethod(params int[] ints)
+        {
+            for (int i = 0; i < ints.Length; i++)
+            {
+                yield return ints[i];
+            }
         }
 
         public static void ReplaceValues<T>(List<T> list, int[] positions)
