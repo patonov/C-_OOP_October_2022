@@ -637,6 +637,57 @@ namespace RandomDemo
             //    Console.WriteLine(b.Title);
             //}
 
+            var listyIterator = new ListyIterator<string>();
+            var createCmd = Console.ReadLine()!.Split().ToArray();
+            var itemArray = createCmd.Skip(1).ToArray();
+            listyIterator.Create(itemArray);
+
+            var inputCommand = Console.ReadLine();
+
+            while (inputCommand != "END") 
+            {
+                if (inputCommand == "Move")
+                {
+                    Console.WriteLine(listyIterator.Move());
+                }
+                else if (inputCommand == "HasNext")
+                {
+                    Console.WriteLine(listyIterator.HasNext());
+                }
+                else if (inputCommand == "Print")
+                {
+                    try
+                    {
+                        listyIterator.Print();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                else if (inputCommand == "PrintAll")
+                {
+                    try
+                    {
+                        listyIterator.PrintAll();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+
+
+                inputCommand = Console.ReadLine();
+            }
+
+
+
+
+
+
+
+
 
 
 
