@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ShuntingYardAlgorithm
@@ -56,50 +56,113 @@ namespace ShuntingYardAlgorithm
             }
         }
 
-        public IEnumerable<Token> Tokenizer(TextReader txtReader)  
+        public IEnumerable<Token> Tokenizer(string input)  
         {
-            StringBuilder token = new StringBuilder();
+            StringBuilder token = new StringBuilder();             
 
-            int current;
+            for (int i = 0; i < input.Length; i++) 
+            { 
+                char ch = input[i];
 
-            while ((current = txtReader.Read()) != -1)
-            {
-                var ch = (char)current;
+                var currentCharType = TokenTypeIdentifier(ch);
 
-                var currentType = TokenTypeIdentifier(ch);
-
-                if (currentType == TokenType.WhiteSpace)
+                if (currentCharType == TokenType.WhiteSpace)
                 {
                     continue;
                 }
 
                 token.Append(ch);
 
-                var nextCharReturnedInt = txtReader.Peek();
-
-                var typeOfNextCharReturnedInt = nextCharReturnedInt != -1 ? TokenTypeIdentifier((char)nextCharReturnedInt) : TokenType.WhiteSpace;
-                
-                if (currentType != typeOfNextCharReturnedInt)
+                int nextCharInt;
+                if ((i + 1) < input.Length)
                 {
-                    if (nextCharReturnedInt == '(')
+                    char nextChar = input[i + 1];
+                    nextCharInt = (int)nextChar;
+                }
+                else 
+                {
+                    nextCharInt = -1;
+                }
+
+                var typeOfNextCharReturnedInt = nextCharInt != -1 ? TokenTypeIdentifier((char)nextCharInt) 
+                    : TokenType.WhiteSpace;
+
+
+                if (currentCharType != typeOfNextCharReturnedInt)
+                {
+                    if (nextCharInt == '(')
                     {
                         yield return new Token(TokenType.Function, token.ToString());
                     }
                     else
                     {
-                        yield return new Token(currentType, token.ToString());
+                        yield return new Token(currentCharType, token.ToString());
                     }
                     token.Clear();
                 }
             }
+
         }
+        
 
+        public IEnumerable<Token> MarshallingYardMethod(IEnumerable<Token> tokens) 
+        {
+            Stack<Token> stack = new Stack<Token>(); 
 
-
-
-
-
-
+            foreach (var token in tokens)
+            {
+                switch (token.Type)
+                {
+                    case TokenType.Number:
+                    case TokenType.Variable:
+                        yield return token; break;
+                    case TokenType.Function:
+                        stack.Push(token); break;
+                    case TokenType.Comma:
+                        while (stack.Peek().Value != "(")
+                        {
+                            yield return stack.Pop();
+                        }
+                        break;
+                    case TokenType.Operator:
+                        while (stack.Any() && stack.Peek().Type == TokenType.Operator
+                            && CompareOperators(token.Value, stack.Peek().Value))
+                        {
+                            yield return stack.Pop();
+                        }
+                        stack.Push(token); break;
+                    case TokenType.Parenthesis:
+                        if (token.Value == "(")
+                        {
+                            stack.Push(token);
+                        }
+                        else
+                        {
+                            while (stack.Peek().Value != "(")
+                            {
+                                yield return stack.Pop();
+                            }
+                            stack.Pop();
+                            if (stack.Peek().Type == TokenType.Function)
+                            {
+                                yield return stack.Pop();
+                            }
+                        }
+                        break;
+                    default:
+                        throw new ArgumentException("The token is not recognized by the parser.");
+                }
+            }
+            while (stack.Any())
+            {
+                var token = stack.Pop();
+                if (token.Type == TokenType.Parenthesis)
+                {
+                    throw new ArgumentException("The parentheses are not in corect order.");
+                }
+                yield return token;
+            }
+        }
 
     }
 }
