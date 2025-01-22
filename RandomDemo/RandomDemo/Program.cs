@@ -637,54 +637,63 @@ namespace RandomDemo
             //    Console.WriteLine(b.Title);
             //}
 
-            var listyIterator = new ListyIterator<string>();
-            var createCmd = Console.ReadLine()!.Split().ToArray();
-            var itemArray = createCmd.Skip(1).ToArray();
-            listyIterator.Create(itemArray);
+            //var listyIterator = new ListyIterator<string>();
+            //var createCmd = Console.ReadLine()!.Split().ToArray();
+            //var itemArray = createCmd.Skip(1).ToArray();
+            //listyIterator.Create(itemArray);
 
-            var inputCommand = Console.ReadLine();
+            //var inputCommand = Console.ReadLine();
 
-            while (inputCommand != "END") 
-            {
-                if (inputCommand == "Move")
-                {
-                    Console.WriteLine(listyIterator.Move());
-                }
-                else if (inputCommand == "HasNext")
-                {
-                    Console.WriteLine(listyIterator.HasNext());
-                }
-                else if (inputCommand == "Print")
-                {
-                    try
-                    {
-                        listyIterator.Print();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                }
-                else if (inputCommand == "PrintAll")
-                {
-                    try
-                    {
-                        listyIterator.PrintAll();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                }
+            //while (inputCommand != "END") 
+            //{
+            //    if (inputCommand == "Move")
+            //    {
+            //        Console.WriteLine(listyIterator.Move());
+            //    }
+            //    else if (inputCommand == "HasNext")
+            //    {
+            //        Console.WriteLine(listyIterator.HasNext());
+            //    }
+            //    else if (inputCommand == "Print")
+            //    {
+            //        try
+            //        {
+            //            listyIterator.Print();
+            //        }
+            //        catch (Exception e)
+            //        {
+            //            Console.WriteLine(e.Message);
+            //        }
+            //    }
+            //    else if (inputCommand == "PrintAll")
+            //    {
+            //        try
+            //        {
+            //            listyIterator.PrintAll();
+            //        }
+            //        catch (Exception e)
+            //        {
+            //            Console.WriteLine(e.Message);
+            //        }
+            //    }
 
 
-                inputCommand = Console.ReadLine();
+            //    inputCommand = Console.ReadLine();
+            //}
+
+
+            var lines = int.Parse(Console.ReadLine()!);
+
+            var persons = new List<EncapsulationPersons.Person>();
+
+            for (int i = 0; i < lines; i++) 
+            { 
+                var cmdArr = Console.ReadLine()!.Split();
+                var person = new EncapsulationPersons.Person(cmdArr[0], cmdArr[1], int.Parse(cmdArr[2]));
+                persons.Add(person);
             }
 
-
-
-
-
+            persons.OrderBy(p => p.FirstName).ThenBy(p => p.LastName).ToList().ForEach(p => Console.WriteLine(p.ToString()));
 
 
 
