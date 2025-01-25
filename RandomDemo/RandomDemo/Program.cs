@@ -6,6 +6,7 @@ using System.Linq;
 using RandomDemo.RawData;
 using System.Collections;
 using System.Security.AccessControl;
+using RandomDemo.InheritanceAnimals;
 
 namespace RandomDemo
 {
@@ -13,13 +14,13 @@ namespace RandomDemo
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
-            StringBuilder sb = new StringBuilder();
+        //    Random random = new Random();
+        //    StringBuilder sb = new StringBuilder();
 
-            //string[] input = Console.ReadLine().Split().ToArray();
-            //int counter = 0;
+        //    //string[] input = Console.ReadLine().Split().ToArray();
+        //    //int counter = 0;
 
-            //while (true)
+        //    while (true)
             //{
             //    for (int i = 0; i < input.Length; i++)
             //    {
@@ -682,20 +683,23 @@ namespace RandomDemo
             //}
 
 
-            var lines = int.Parse(Console.ReadLine()!);
+            //var lines = int.Parse(Console.ReadLine()!);
 
-            var persons = new List<EncapsulationPersons.Person>();
+            //var persons = new List<EncapsulationPersons.Person>();
 
-            for (int i = 0; i < lines; i++) 
-            { 
-                var cmdArr = Console.ReadLine()!.Split();
-                var person = new EncapsulationPersons.Person(cmdArr[0], cmdArr[1], int.Parse(cmdArr[2]));
-                persons.Add(person);
-            }
+            //for (int i = 0; i < lines; i++) 
+            //{ 
+            //    var cmdArr = Console.ReadLine()!.Split();
+            //    var person = new EncapsulationPersons.Person(cmdArr[0], cmdArr[1], int.Parse(cmdArr[2]));
+            //    persons.Add(person);
+            //}
 
-            persons.OrderBy(p => p.FirstName).ThenBy(p => p.LastName).ToList().ForEach(p => Console.WriteLine(p.ToString()));
+            //persons.OrderBy(p => p.FirstName).ThenBy(p => p.LastName).ToList().ForEach(p => Console.WriteLine(p.ToString()));
 
-
+            Puppy dog = new Puppy();
+            dog.Bark();
+            dog.Eat();
+            dog.Weep();
 
 
 
