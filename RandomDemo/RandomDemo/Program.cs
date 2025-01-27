@@ -696,10 +696,23 @@ namespace RandomDemo
 
             //persons.OrderBy(p => p.FirstName).ThenBy(p => p.LastName).ToList().ForEach(p => Console.WriteLine(p.ToString()));
 
-            Puppy dog = new Puppy();
-            dog.Bark();
-            dog.Eat();
-            dog.Weep();
+            //Puppy dog = new Puppy();
+            //dog.Bark();
+            //dog.Eat();
+            //dog.Weep();
+
+            StackOfStrings strings = new StackOfStrings();
+
+            Console.WriteLine(strings.IsEmpty());
+
+            Stack<string> fullStack = new Stack<string>();
+
+            fullStack.Push("b");
+            fullStack.Push("c");
+
+            strings.AddRange(fullStack);
+
+            Console.WriteLine(strings.IsEmpty());
 
 
 
