@@ -35,7 +35,7 @@ namespace Competitors
             }
         }
 
-        public List<T> Scores { get; set; }
+        public List<T> Scores { get => this.scores; }
 
         public void Add(T score)
         { 
